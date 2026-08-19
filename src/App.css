@@ -4,6 +4,8 @@
 .mara-luxury-container {
   position: relative;
   width: 100%;
+  min-height: 100vh; /* Fallback for older layout formats */
+  min-height: 100dvh; /* Forces the luxury background layer to stretch to absolute mobile glass edges */
   overflow: hidden;
   transition: background-color 1000ms cubic-bezier(0.25, 1, 0.3, 1);
   background-color: #0b0704;
@@ -59,7 +61,7 @@
   opacity: 0.14;
   background-size: 150px 150px;
   background-repeat: repeat;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
 }
 
 /* ==========================================
