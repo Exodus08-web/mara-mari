@@ -1,45 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
 
-/* ==========================================================================
-   GLOBAL RESET 
-   Removes default browser spacing to eliminate white screen borders
-   ========================================================================== */
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ==========================================================================
-   CANVAS LAYER CONSTRAINTS
-   Locks the root layout container blocks tight to the device glass edge
-   ========================================================================== */
-html,
-body,
-#root {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background-color: #0b0704; /* Clean luxury fallback color */
-}
-
 html {
+  width: 100%;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
   overflow-x: hidden;
+
+  background: #0b0704;
+
   scroll-behavior: smooth;
 }
 
 body {
+  width: 100%;
+  min-width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  margin: 0;
+  padding: 0;
+
   overflow-x: hidden;
+
+  background: #0b0704;
+
   font-family: "Inter", sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==========================================================================
-   FORM & INTERACTION RESETS
-   ========================================================================== */
+#root {
+  width: 100%;
+  min-width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+
+  margin: 0;
+  padding: 0;
+
+  background: transparent;
+}
+
+/* ==========================================
+   FORM / INTERACTION RESET
+========================================== */
+
 button,
 a,
 input,
@@ -55,12 +78,14 @@ button {
   outline: none;
 }
 
-/* ==========================================================================
-   MEDIA LOGIC
-   ========================================================================== */
+/* ==========================================
+   IMAGES
+========================================== */
+
 img {
   max-width: 100%;
   height: auto;
+
   user-select: none;
   -webkit-user-drag: none;
 }
