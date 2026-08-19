@@ -266,18 +266,29 @@
 }
 
 /* ==========================================
-   RESPONSIVE OVERRIDES (MOBILE)
+   RESPONSIVE DESIGN SYSTEM (MOBILE UPDATES)
 ========================================== */
 
 @media (max-width: 640px) {
   .mara-hero-stage {
-    padding: 35px 24px;
-    min-height: 640px;
+    padding: 30px 24px 24px 24px; /* Reduced to balance dynamic screen areas */
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
+  /* Force the layout canvas back to the layout dead center */
   .mara-center-stage {
     max-height: none;
     margin: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateY(20px); /* Smooth downward offset from headers */
   }
 
   .hud-location,
@@ -287,23 +298,33 @@
 
   .mara-brand-hud {
     justify-content: center;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
+    height: auto;
   }
 
   .hud-logo {
-    font-size: 1.35rem;
-    letter-spacing: 0.28em;
+    font-size: 1.25rem;
+    letter-spacing: 0.25em;
   }
 
+  /* Refines mobile background font footprint tracking */
   .mara-ghost-serif {
-    font-size: 13vw;
+    font-size: 11vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Forces mobile carousel sizes to match and scale down properly */
+  .mara-carousel-viewport .mara-carousel-item {
+    width: 170px !important;
+    height: 340px !important;
   }
 
   .mara-interface-panel {
     flex-direction: column;
     align-items: flex-start;
-    gap: 36px;
-    padding-top: 24px;
+    gap: 24px;
+    padding-top: 16px;
   }
 
   .mara-editorial-block {
@@ -311,14 +332,42 @@
     max-width: none;
   }
 
+  /* Downscales product names so long titles fit easily */
   .mara-product-title {
-    font-size: 2.25rem;
+    font-size: 1.8rem;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.01em;
+  }
+
+  .mara-product-description {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  /* Compact button deck layout dimensions */
+  .mara-editorial-nav {
+    gap: 8px;
+  }
+
+  .mara-editorial-nav button {
+    width: 46px;
+    height: 40px;
+    border-radius: 3px;
   }
 
   .mara-luxury-cta {
     width: 100%;
     justify-content: space-between;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+  }
+
+  .mara-luxury-cta .cta-lux-circle {
+    width: 44px;
+    height: 44px;
   }
 }

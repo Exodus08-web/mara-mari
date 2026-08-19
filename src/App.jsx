@@ -87,7 +87,6 @@ export default function App() {
     navigate(direction);
   };
 
-  // Recalculated 3-item cyclic navigation indexes
   const center = activeIndex;
   const left = (activeIndex + 2) % 3;
   const right = (activeIndex + 1) % 3;
@@ -169,7 +168,7 @@ export default function App() {
         <header className="mara-brand-hud">
           <div className="hud-location">AL KARAMA, DUBAI</div>
           <div className="hud-logo">MARA—MARI</div>
-          <div className="hud-boutique">COLLECTION Nº 03</div>
+          <div className="hud-boutique">THE ARTISANAL REPERTOIRE</div>
         </header>
 
         <div className="mara-center-stage">
@@ -226,7 +225,7 @@ export default function App() {
             </div>
           </div>
 
-          <a href="#reserve" className="mara-luxury-cta">
+          <a href="#menu" className="mara-luxury-cta">
             <span className="cta-label">EXPLORE THE ENTIRE MENU</span>
             <div className="cta-lux-circle">
               <ArrowRight size={20} strokeWidth={1.25} />
