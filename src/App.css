@@ -61,7 +61,7 @@
   opacity: 0.14;
   background-size: 150px 150px;
   background-repeat: repeat;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
 }
 
 /* ==========================================
@@ -122,7 +122,7 @@
   font-weight: 600;
   font-size: 10vw; 
   line-height: 1;
-  color: rgba(255, 255, 255, 0.24); 
+  color: rgba(255, 255, 255, 0.24); /* High clear contrast visibility */
   text-align: center;
   letter-spacing: -0.01em;
   user-select: none;
@@ -266,14 +266,16 @@
 ========================================== */
 @media (max-width: 640px) {
   .mara-hero-stage {
-    padding: 30px 24px 24px 24px; 
-    min-height: 100vh; /* Fallback for older browsers */
-    min-height: 100dvh; /* Mobile safe heights to close background blanks */
-    height: 100vh; /* Fallback */
-    height: 100dvh; /* Forces color right to screen navigation edge */
+    /* Uses dynamic env parameters to completely engulf phone menu/clock boundaries seamlessly */
+    padding: calc(15px + env(safe-area-inset-top)) 24px calc(15px + env(safe-area-inset-bottom)) 24px !important; 
+    min-height: 100vh !important; /* Fallback for older browsers */
+    min-height: 100dvh !important; /* Mobile safe heights to close background blanks */
+    height: 100vh !important; /* Fallback */
+    height: 100dvh !important; /* Forces color right to screen navigation edge */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-sizing: border-box;
   }
 
   /* Force the layout canvas back to the layout dead center */
