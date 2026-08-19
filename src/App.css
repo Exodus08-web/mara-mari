@@ -1,7 +1,6 @@
 /* ==========================================
    THE BOUTIQUE CONTAINER
 ========================================== */
-
 .mara-luxury-container {
   position: relative;
   width: 100%;
@@ -13,7 +12,8 @@
 .mara-hero-stage {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Fallback for older browsers */
+  height: 100dvh; /* Dynamically adjusts as mobile address bars expand/shrink */
   min-height: 750px;
   overflow: hidden;
   display: flex;
@@ -34,7 +34,6 @@
 /* ==========================================
    CINEMATIC VEIL SHUTTER (ENTRANCE)
 ========================================== */
-
 .mara-cinematic-shutter {
   position: absolute;
   inset: 0;
@@ -52,7 +51,6 @@
 /* ==========================================
    FINE LUXURY GRAIN TEXTURE
 ========================================== */
-
 .mara-luxury-grain {
   position: absolute;
   inset: 0;
@@ -67,7 +65,6 @@
 /* ==========================================
    TOP EDITORIAL BRAND HUD
 ========================================== */
-
 .mara-brand-hud {
   display: flex;
   justify-content: space-between;
@@ -100,7 +97,6 @@
 /* ==========================================
    CENTER PLATFORM EXHIBITION
 ========================================== */
-
 .mara-center-stage {
   position: relative;
   width: 100%;
@@ -108,7 +104,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Strictly restricts container box bounds to isolate from top bar elements */
   max-height: calc(100vh - 260px); 
   margin: 20px 0;
 }
@@ -123,9 +118,9 @@
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 600;
-  font-size: 10vw; /* Balanced size parameters for full descriptions */
+  font-size: 10vw; 
   line-height: 1;
-  color: rgba(255, 255, 255, 0.24); /* High clear contrast visibility */
+  color: rgba(255, 255, 255, 0.24); 
   text-align: center;
   letter-spacing: -0.01em;
   user-select: none;
@@ -150,7 +145,6 @@
 /* ==========================================
    EDITORIAL TRANSPARENT PANEL FOOTER
 ========================================== */
-
 .mara-interface-panel {
   display: flex;
   justify-content: space-between;
@@ -268,12 +262,13 @@
 /* ==========================================
    RESPONSIVE DESIGN SYSTEM (MOBILE UPDATES)
 ========================================== */
-
 @media (max-width: 640px) {
   .mara-hero-stage {
-    padding: 30px 24px 24px 24px; /* Reduced to balance dynamic screen areas */
-    min-height: 100vh;
-    height: 100vh;
+    padding: 30px 24px 24px 24px; 
+    min-height: 100vh; /* Fallback for older browsers */
+    min-height: 100dvh; /* Mobile safe heights to close background blanks */
+    height: 100vh; /* Fallback */
+    height: 100dvh; /* Forces color right to screen navigation edge */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -288,7 +283,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    transform: translateY(20px); /* Smooth downward offset from headers */
+    transform: translateY(20px); 
   }
 
   .hud-location,
